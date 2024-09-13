@@ -19,10 +19,12 @@ def main():
     
     
     while True:
+        dt = clock.tick(60) / 1000
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
         pygame.Surface.fill(screen,color=000000)
+        player.update(dt)
         player.draw(screen)
         pygame.display.flip()
         dt = clock.tick(60) / 1000
